@@ -1,0 +1,158 @@
+{
+  "ID": "1e2136ce-b5b2-4a79-805c-6b1efb741983",
+  "Version": "3.10.0.0",
+  "Name": "Skeleton",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Length": 20.0,
+        "Position": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Scale": {
+          "ScaleX": 1.0,
+          "ScaleY": 1.0
+        },
+        "CColor": {},
+        "BlendFunc": {
+          "Src": 770,
+          "Dst": 771
+        },
+        "Tag": 107,
+        "Children": [
+          {
+            "Length": 442.0,
+            "Position": {
+              "X": -319.0336,
+              "Y": 260.0816
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "RotationSkewX": 84.6022,
+            "RotationSkewY": 84.6022,
+            "CColor": {},
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "Tag": 108,
+            "Children": [
+              {
+                "Length": 489.0,
+                "Position": {
+                  "X": 442.3666,
+                  "Y": 0.0001
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "RotationSkewX": -27.1668,
+                "RotationSkewY": -27.1668,
+                "CColor": {},
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "Tag": 109,
+                "Children": [
+                  {
+                    "Length": 639.0,
+                    "Position": {
+                      "X": 489.6415,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": -76.2099,
+                    "RotationSkewY": -76.2099,
+                    "CColor": {},
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 771
+                    },
+                    "Tag": 110,
+                    "Children": [
+                      {
+                        "Length": 701.0,
+                        "Position": {
+                          "X": 13.8505,
+                          "Y": 220.4425
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -67.2883,
+                        "RotationSkewY": -67.2883,
+                        "CColor": {},
+                        "BlendFunc": {
+                          "Src": 770,
+                          "Dst": 771
+                        },
+                        "Tag": 111,
+                        "ActionTag": 1774640670,
+                        "ZOrder": 4,
+                        "Size": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "Name": "Bone_4",
+                        "ctype": "BoneNodeObjectData"
+                      }
+                    ],
+                    "ActionTag": -427476953,
+                    "ZOrder": 3,
+                    "Size": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "Name": "Bone_3",
+                    "ctype": "BoneNodeObjectData"
+                  }
+                ],
+                "ActionTag": -1591291695,
+                "ZOrder": 2,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "Bone_2",
+                "ctype": "BoneNodeObjectData"
+              }
+            ],
+            "ActionTag": -637766335,
+            "ZOrder": 1,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "Bone_1",
+            "ctype": "BoneNodeObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Skeleton",
+        "ctype": "SkeletonNodeObjectData"
+      },
+      "UsedResources": [],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Skeleton"
+}

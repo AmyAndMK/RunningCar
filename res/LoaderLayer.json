@@ -1,0 +1,358 @@
+{
+  "ID": "10c345ac-f76d-4394-8ba8-421b5fe27e99",
+  "Version": "3.10.0.0",
+  "Name": "LoaderLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 35,
+        "Speed": 1.0,
+        "Timelines": [
+          {
+            "ActionTag": -808837328,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 352.1917,
+                "Y": 671.611,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 352.1888,
+                "Y": 671.6117,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 352.1859,
+                "Y": 671.6131,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 352.1833,
+                "Y": 671.6118,
+                "FrameIndex": 20,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 352.1804,
+                "Y": 671.6116,
+                "FrameIndex": 25,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 352.1777,
+                "Y": 671.6102,
+                "FrameIndex": 30,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 352.1776,
+                "Y": 671.6088,
+                "FrameIndex": 35,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -808837328,
+            "Property": "RotationSkew",
+            "Frames": [
+              {
+                "X": 3060.418,
+                "Y": 3060.4058,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 3149.0593,
+                "Y": 3149.0593,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 3239.1064,
+                "Y": 3239.1152,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 3329.6433,
+                "Y": 3329.6521,
+                "FrameIndex": 20,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 3420.3479,
+                "Y": 3420.3743,
+                "FrameIndex": 25,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 3510.4092,
+                "Y": 3510.4285,
+                "FrameIndex": 30,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 3599.3127,
+                "Y": 3599.332,
+                "FrameIndex": 35,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          }
+        ],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 106,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/ImageFile.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": -165,
+            "Scale9OriginY": -328,
+            "Scale9Width": 376,
+            "Scale9Height": 702,
+            "AnchorPoint": {
+              "ScaleX": -6.2117,
+              "ScaleY": 1.5691
+            },
+            "Position": {
+              "X": 76.8091,
+              "Y": 592.9087
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.12,
+              "Y": 0.5219
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "LeftMargin": 4052.2971,
+            "RightMargin": -4052.2969,
+            "TopMargin": 1189.5889,
+            "BottomMargin": -1189.589,
+            "Tag": 36,
+            "ActionTag": 1171039405,
+            "Size": {
+              "X": 640.0,
+              "Y": 1136.0
+            },
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/background5.PNG",
+              "Plist": ""
+            },
+            "Scale9OriginX": 211,
+            "Scale9OriginY": 374,
+            "Scale9Width": 218,
+            "Scale9Height": 388,
+            "AnchorPoint": {
+              "ScaleX": 0.6558,
+              "ScaleY": 0.5667
+            },
+            "Position": {
+              "X": 418.7523,
+              "Y": 642.1125
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6543,
+              "Y": 0.5652
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "LeftMargin": -0.9597,
+            "RightMargin": 0.9597,
+            "TopMargin": 1.6587,
+            "BottomMargin": -1.6587,
+            "Tag": 90,
+            "ActionTag": -1461676856,
+            "Size": {
+              "X": 640.0,
+              "Y": 1136.0
+            },
+            "Name": "Image_12",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/a1.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 55,
+            "Scale9OriginY": 26,
+            "Scale9Width": 58,
+            "Scale9Height": 27,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 313.7933,
+              "Y": 477.1774
+            },
+            "Scale": {
+              "ScaleX": 1.8406,
+              "ScaleY": 1.8406
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4903,
+              "Y": 0.4201
+            },
+            "PreSize": {
+              "X": 0.2625,
+              "Y": 0.0695
+            },
+            "LeftMargin": 229.7933,
+            "RightMargin": 242.2067,
+            "TopMargin": 619.3226,
+            "BottomMargin": 437.6774,
+            "Tag": 38,
+            "ActionTag": -275748984,
+            "Size": {
+              "X": 168.0,
+              "Y": 79.0
+            },
+            "Name": "Image_3",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/w.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 50,
+            "Scale9OriginY": 84,
+            "Scale9Width": 52,
+            "Scale9Height": 89,
+            "AnchorPoint": {
+              "ScaleX": 0.4878,
+              "ScaleY": 0.4586
+            },
+            "Position": {
+              "X": 352.1917,
+              "Y": 671.611
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "RotationSkewX": 3060.418,
+            "RotationSkewY": 3060.4058,
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5503,
+              "Y": 0.5912
+            },
+            "PreSize": {
+              "X": 0.2375,
+              "Y": 0.2262
+            },
+            "LeftMargin": 278.0461,
+            "RightMargin": 209.9539,
+            "TopMargin": 325.2492,
+            "BottomMargin": 553.7508,
+            "Tag": 39,
+            "ActionTag": -808837328,
+            "Size": {
+              "X": 152.0,
+              "Y": 257.0
+            },
+            "Name": "Image_4",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 1136.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "Default/ImageFile.png",
+        "texture/a1.png",
+        "texture/background5.PNG",
+        "texture/w.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}
