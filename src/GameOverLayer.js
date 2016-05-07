@@ -256,10 +256,11 @@ var GameOverLayer = cc.Layer.extend({
         gameOverPtr.delegate.ps.yao(0.1);
         //gameOverPtr.bestLb.setString("256");
 
-        if(gameOverPtr.delegate.oldStick){
-            gameOverPtr.delegate.oldStick.removeFromParent(true);
-            gameOverPtr.delegate.oldStick = null;
-        }
+         if(gameOverPtr.delegate.oldStick){
+            gameOverPtr.delegate.oldStick.visible = false;
+        //     gameOverPtr.delegate.oldStick.removeFromParent(true);
+        //     gameOverPtr.delegate.oldStick = null;
+         }
         //gameOverPtr.bestLb.setString("27");
     },
     toHome:function()

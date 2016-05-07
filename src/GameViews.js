@@ -18,6 +18,13 @@ var GameBgLayer = cc.Layer.extend({
         var rnd = Math.ceil(Math.random() * 2 + 1);
         var resStr = 'res.StartBackground_png'+rnd;
         cc.log(resStr);
+
+        for (var i = 10 - 1; i >= 0; i--) {
+            
+            var scale = parseInt(Math.floor(Math.random() * 7) / 6) + 2;
+            cc.log(scale);
+        };
+
         var spriteBg = new cc.Sprite(eval(resStr));
         spriteBg.attr({
             x: centerX,
@@ -165,21 +172,21 @@ var GameView = cc.Layer.extend({
     waitSoundId:0,
     exitLayer : null,
     init:function () {
-        this._super();
-        this.ids = {};
-        this.unused_sprites = [];
-        titleLB = new cc.LabelTTF("LLLLL","Aria",12);
-        var size = cc.winSize;
-        var centerX = size.width / 2;
-        var centerY = size.height / 2;
+        // this._super();
+        // this.ids = {};
+        // this.unused_sprites = [];
+        // titleLB = new cc.LabelTTF("LLLLL","Aria",12);
+        // var size = cc.winSize;
+        // var centerX = size.width / 2;
+        // var centerY = size.height / 2;
 
-        titleLB.anchorX = 0.5;
-        titleLB.anchorY = 0.5;
-        titleLB.scaleX = 3;
-        titleLB.scaleY = 3;
-        titleLB.color = cc.color._getRed;
-        titleLB.setPosition(centerX,centerY);
-        this.addChild(titleLB,10,2);
+        // titleLB.anchorX = 0.5;
+        // titleLB.anchorY = 0.5;
+        // titleLB.scaleX = 3;
+        // titleLB.scaleY = 3;
+        // titleLB.color = cc.color._getRed;
+        // titleLB.setPosition(centerX,centerY);
+        // this.addChild(titleLB,10,2);
     },
     ctor:function(){
         this._super();
@@ -229,8 +236,6 @@ var GameView = cc.Layer.extend({
         return true;
     },
     nextGen:function(restart=false){
-        if (this._toHome) 
-            titleLB.setString("233");
         if(this.stickSprite != null){
             this.oldStick = this.stickSprite;
 
@@ -244,8 +249,6 @@ var GameView = cc.Layer.extend({
 
         this.obLayer.generateOb();
 
-        if (this._toHome) 
-            titleLB.setString("248");
         var prevObCenterX = this.obLayer.prevPosX;
         var moveBy = new cc.MoveBy(prevObCenterX/ 500,cc.p(-prevObCenterX,0));
         var gap = this.ps.player.x;
@@ -257,8 +260,7 @@ var GameView = cc.Layer.extend({
         this.audioEngine.playEffect(res.vitory_mp3);
         var playWait = cc.callFunc(this.startPlayWaitSound, this);
         var moveSeq = cc.sequence(cloneMoveBy, playWait, cc.CallFunc(this.ps.player.yao, this.ps.player, 0.01), cc.CallFunc(this.enableStart, this));
-        if (this._toHome) 
-            titleLB.setString("260");
+
         if (restart) {
             this.obLayer.x = this.obLayer.x - prevObCenterX;
         }
@@ -267,8 +269,7 @@ var GameView = cc.Layer.extend({
             this.ps.player.runAction(moveSeq);
             this.obLayer.runAction(moveBy);
         }
-        if (this._toHome) 
-            titleLB.setString("271");
+
         if(this.oldStick != null){
             if (this._toHome) {
                 this.oldStick = null;
@@ -279,8 +280,10 @@ var GameView = cc.Layer.extend({
             }
             
         }
-        if (this._toHome) 
-            titleLB.setString("273");
+        if (this._toHome)
+        {
+            this._toHome = false;
+        }
     },
     enableStart:function()
     {
@@ -381,21 +384,15 @@ var GameView = cc.Layer.extend({
         // cc.log(this.isTouchEnabled ? "true": "false");
         // self.userInteractionEnabled = true;
         // cc.log(this.isTouchEnabled ? "true": "false");
-        if (this._toHome) 
-            titleLB.setString("372");
-        this.nextGen(restart);
-        if (this._toHome) 
-            titleLB.setString("375");
 
-        this.gameScore = 0;
-        if (this._toHome) 
-            titleLB.setString("350");
-        this.tipLayer.visible = true;
-        this.tipLayer.scoreLb.setString(0);
-        this.tipLayer.setLocalZOrder(10);
-        if (this._toHome) 
-            titleLB.setString("352");
-        //titleLB.setString("354");
+       this.nextGen(restart);
+
+
+       this.gameScore = 0;
+
+       this.tipLayer.visible = true;
+       this.tipLayer.scoreLb.setString(0);
+       this.tipLayer.setLocalZOrder(10);
 
         //if (!restart) {
             cc.eventManager.addListener({
@@ -404,8 +401,6 @@ var GameView = cc.Layer.extend({
             onTouchBegan:self.onTouchBegan,
             onTouchEnded:self.onToucheEnded
             },this);
-        if (this._toHome) 
-            titleLB.setString("385");
 
         //}
         //TEST
@@ -429,12 +424,12 @@ var GameView = cc.Layer.extend({
             this.obLayer.nextOb = null;
         }
         //titleLB.setString("448");
-        if(this.oldStick){
-            //titleLB.setString("4511");
-            //this.oldStick.removeFromParent(true);
-            //titleLB.setString("4513");
-            this.oldStick = null;
-        }
+        // if(this.oldStick){
+        //     //titleLB.setString("4511");
+        //     //this.oldStick.removeFromParent(true);
+        //     //titleLB.setString("4513");
+        //     this.oldStick = null;
+        // }
         //titleLB.setString("451");
         if (this.stickSprite) {
             this.stickSprite.removeFromParent(true);
@@ -444,7 +439,6 @@ var GameView = cc.Layer.extend({
         //titleLB.setString("454");
         menuLayer.popUp();
 
-        titleLB.setString("457");
         this.ps.player.x = bgSize.width /2;
         this.ps.player.y = obSize.height +  this.ps.GetPlayerHeight() * 0.5;
         this.ps.player.stopAllActions();
@@ -453,7 +447,6 @@ var GameView = cc.Layer.extend({
 
         this._start = true;
         this._toHome = true;
-        titleLB.setString("464");
     },
     onEndGrow:function(realH,data){
         //titleLB.setString("onEndGrow");
@@ -469,13 +462,12 @@ var GameView = cc.Layer.extend({
         //this.audioEngine.playEffect(res.bump_mp3);
         this.audioEngine.playEffect(res.start_mp3);
         //this.startPlayWaitSound();
-        //titleLB.setString("412");
+
         if(data < leftX || data > rightX ){
-            //titleLB.setString("414");
-            if (this == null) {
-                //titleLB.setString("this is null");
-            };
-            var jumpFall = new cc.MoveBy(data / 500,cc.p(50,-(this.ps.player.y + this.ps.GetPlayerHeight())));
+            if (data > rightX)
+                data = rightX;
+            
+            var jumpFall = new cc.MoveBy(0.5,cc.p(50,-(this.ps.player.y + this.ps.GetPlayerHeight())));
 
             var rotate = new cc.RotateBy(90 / 500,90);
             //titleLB.setString("421");
@@ -499,7 +491,7 @@ var GameView = cc.Layer.extend({
             //titleLB.setString("425");
             walktime = data / 500;
             //titleLB.setString("427");
-            moveBy = cc.moveBy(walktime,cc.p(data,0));
+            moveBy = cc.moveBy(walktime,cc.p(data + this.obLayer.getRealW(this.obLayer.prevOb) * 0.5,0));
             //titleLB.setString("429");
             seq = cc.sequence(moveBy,cc.callFunc(this.stopPlayWaitSound,this),stickFunc,cc.spawn(jumpFall,rotate),callFunc);
             //titleLB.setString("431");
