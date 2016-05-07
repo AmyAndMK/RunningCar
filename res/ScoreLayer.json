@@ -15,52 +15,6 @@
         "Tag": 12,
         "Children": [
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "texture/scoreBg.png",
-              "Plist": ""
-            },
-            "Scale9Enable": true,
-            "Scale9OriginX": 15,
-            "Scale9OriginY": 15,
-            "Scale9Width": 131,
-            "Scale9Height": 70,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 320.5,
-              "Y": 351.1163
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.5008,
-              "Y": 0.7315
-            },
-            "PreSize": {
-              "X": 0.2516,
-              "Y": 0.2083
-            },
-            "LeftMargin": 240.0,
-            "RightMargin": 239.0,
-            "TopMargin": 78.8837,
-            "BottomMargin": 301.1163,
-            "Tag": 16,
-            "ActionTag": -2096155406,
-            "Size": {
-              "X": 161.0,
-              "Y": 100.0
-            },
-            "Name": "Image_2",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "IsCustomSize": true,
             "FontSize": 36,
             "LabelText": "12",
@@ -165,8 +119,7 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "texture/guide_text.png",
-        "texture/scoreBg.png"
+        "texture/guide_text.png"
       ],
       "ctype": "GameFileData"
     }
