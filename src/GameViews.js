@@ -19,11 +19,11 @@ var GameBgLayer = cc.Layer.extend({
         var resStr = 'res.StartBackground_png'+rnd;
         cc.log(resStr);
 
-        for (var i = 10 - 1; i >= 0; i--) {
+        // for (var i = 10 - 1; i >= 0; i--) {
             
-            var scale = parseInt(Math.floor(Math.random() * 7) / 6) + 2;
-            cc.log(scale);
-        };
+        //     var scale = parseInt(Math.floor(Math.random() * 7) / 6) + 2;
+        //     cc.log(scale);
+        // };
 
         var spriteBg = new cc.Sprite(eval(resStr));
         spriteBg.attr({
