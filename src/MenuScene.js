@@ -106,7 +106,7 @@ var FrontLayer = cc.Layer.extend({
         this._menuStartBtn.opacity = 255;
         //this.removeFromParent(true);
         this.visible = false;
-        cc.audioEngine.playEffect(res.btn_mp3,false);
+        //cc.audioEngine.playEffect(res.btn_mp3,false);
         gameLayer.startGame();
 
     },

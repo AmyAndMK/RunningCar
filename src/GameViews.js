@@ -50,8 +50,8 @@ function PlayerSprite(){
     this.init=function () {
 
         self.sfCache = cc.spriteFrameCache;
-        self.sfCache.addSpriteFrames(res.ShakePlist, res.ShakePng);
-        self.sfCache.addSpriteFrames(res.KickPlist, res.KickPng);
+        // self.sfCache.addSpriteFrames(res.ShakePlist, res.ShakePng);
+        // self.sfCache.addSpriteFrames(res.KickPlist, res.KickPng);
         self.sfCache.addSpriteFrames(res.WalkPlist, res.WalkPng);
         self.sfCache.addSpriteFrames(res.YaoPlist, res.YaoPng);
 
@@ -88,44 +88,44 @@ function PlayerSprite(){
               var animation = new cc.Animation(animFrames, flag);
         return cc.animate(animation).repeatForever();
           };
-    this.kickAction= function (flag) {
-        self.player.stopAllActions();
-              var animFrames = [];
-              var str = "";
-              var frame;
-              for (var i = 1; i < 10; i++) {
-                  str = "t000" + i + ".png";
-                  frame = self.sfCache.getSpriteFrame(str);
-                  animFrames.push(frame);
-              }
-              var animation = new cc.Animation(animFrames, flag);
-        return animate(animation).repeatForever();
-          };
-    this.shakeAction= function (flag) {
-        self.player.stopAllActions();
-              var animFrames = [];
-              var str = "";
-              var frame;
-              for (var i = 1; i < 10; i++) {
-                  str = "dq000" + i + ".png";
-                  frame = self.sfCache.getSpriteFrame(str);
-                  animFrames.push(frame);
-              }
-              var animation = new cc.Animation(animFrames, flag);
-              return cc.animate(animation).repeatForever();
-          }
+    // this.kickAction= function (flag) {
+    //     self.player.stopAllActions();
+    //           var animFrames = [];
+    //           var str = "";
+    //           var frame;
+    //           for (var i = 1; i < 10; i++) {
+    //               str = "t000" + i + ".png";
+    //               frame = self.sfCache.getSpriteFrame(str);
+    //               animFrames.push(frame);
+    //           }
+    //           var animation = new cc.Animation(animFrames, flag);
+    //     return animate(animation).repeatForever();
+    //       };
+    // this.shakeAction= function (flag) {
+    //     self.player.stopAllActions();
+    //           var animFrames = [];
+    //           var str = "";
+    //           var frame;
+    //           for (var i = 1; i < 10; i++) {
+    //               str = "dq000" + i + ".png";
+    //               frame = self.sfCache.getSpriteFrame(str);
+    //               animFrames.push(frame);
+    //           }
+    //           var animation = new cc.Animation(animFrames, flag);
+    //           return cc.animate(animation).repeatForever();
+    //       };
         this.walk=function(flag){
             this.player.runAction(this.walkAction(flag));
         },
-        this.shake=function(flag){
-            this.player.runAction(this.shakeAction(flag));
-        },
+        // this.shake=function(flag){
+        //     this.player.runAction(this.shakeAction(flag));
+        // },
         this.yao=function(flag){
             this.player.runAction(this.yaoAction(flag));
-        }
-        this.kick=function(flag){
-            this.player.runAction(this.kickAction(flag));
         },
+        // this.kick=function(flag){
+        //     this.player.runAction(this.kickAction(flag));
+        // },
         this.GetPlayerHeight=function()
         {
             return this.player.getScaleY() * this.player.getContentSize().height;
@@ -578,9 +578,20 @@ var GameView = cc.Layer.extend({
 
             onKeyReleased:function(key, event) {
                 if(key == cc.KEY.back){
+                    if (gameOverLayer.visible) {
+                        return;
+                    }
+
                     //cc.director.end(); //this will close app
-                    
-                    exitLayer.visible = true;
+                    if (!exitLayer.visible) {
+                        exitLayer.visible = true;
+                        cc.director.pause();
+                    }
+                    else
+                    {
+                        exitLayer.visible = false;
+                        cc.director.resume();
+                    }
                     //gameOverLayer.visible = false;
                 }
             }

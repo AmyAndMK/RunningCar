@@ -1,5 +1,5 @@
 {
-  "ID": "63590104-90c1-4c09-a4f0-6b5619fa9a9d",
+  "ID": "7e8b0e52-d9f7-4547-a498-50ce0215a3a1",
   "Version": "3.10.0.0",
   "Name": "ExitLayer",
   "Content": {
@@ -12,25 +12,25 @@
       },
       "AnimationList": [],
       "ObjectData": {
-        "Tag": 3,
+        "Tag": 64,
         "Children": [
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "texture/background0.png",
+              "Path": "texture/1.png",
               "Plist": ""
             },
-            "Scale9OriginX": 211,
-            "Scale9OriginY": 374,
-            "Scale9Width": 218,
-            "Scale9Height": 388,
+            "Scale9OriginX": 154,
+            "Scale9OriginY": 56,
+            "Scale9Width": 160,
+            "Scale9Height": 59,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 321.7895,
-              "Y": 560.9936
+              "X": 317.0,
+              "Y": 608.0
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -39,24 +39,24 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.5028,
-              "Y": 0.4938
+              "X": 0.4953,
+              "Y": 0.5352
             },
             "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
+              "X": 0.7312,
+              "Y": 0.1505
             },
-            "LeftMargin": 1.7895,
-            "RightMargin": -1.7895,
-            "TopMargin": 7.0063,
-            "BottomMargin": -7.0064,
-            "Tag": 152,
-            "ActionTag": -433735650,
+            "LeftMargin": 83.0,
+            "RightMargin": 89.0,
+            "TopMargin": 442.5,
+            "BottomMargin": 522.5,
+            "Tag": 65,
+            "ActionTag": 1437651572,
             "Size": {
-              "X": 640.0,
-              "Y": 1136.0
+              "X": 468.0,
+              "Y": 171.0
             },
-            "Name": "Image_3",
+            "Name": "Image_1",
             "ctype": "ImageViewObjectData"
           },
           {
@@ -74,37 +74,38 @@
             },
             "PressedFileData": {
               "Type": "Normal",
-              "Path": "texture/btn_home.png",
+              "Path": "texture/2.png",
               "Plist": ""
             },
             "NormalFileData": {
               "Type": "Normal",
-              "Path": "texture/btn_home.png",
+              "Path": "texture/2-1.png",
               "Plist": ""
             },
             "Scale9Enable": true,
             "Scale9OriginX": 15,
             "Scale9OriginY": 11,
-            "Scale9Width": 84,
-            "Scale9Height": 92,
+            "Scale9Width": 74,
+            "Scale9Height": 81,
             "OutlineColor": {
               "G": 0,
               "B": 0
             },
             "ShadowColor": {
-              "G": 127,
-              "B": 80
+              "R": 110,
+              "G": 110,
+              "B": 110
             },
             "ShadowOffsetX": 2.0,
             "ShadowOffsetY": -2.0,
             "TouchEnable": true,
             "AnchorPoint": {
-              "ScaleX": 0.5055,
-              "ScaleY": 0.3849
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
             },
             "Position": {
-              "X": 446.3864,
-              "Y": 323.9199
+              "X": 206.0,
+              "Y": 460.6115
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -113,24 +114,24 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.6975,
-              "Y": 0.2851
+              "X": 0.3219,
+              "Y": 0.4055
             },
             "PreSize": {
-              "X": 0.1781,
-              "Y": 0.1004
+              "X": 0.1625,
+              "Y": 0.0907
             },
-            "LeftMargin": 388.7594,
-            "RightMargin": 137.2406,
-            "TopMargin": 741.9587,
-            "BottomMargin": 280.0413,
-            "Tag": 21,
-            "ActionTag": 1691868539,
+            "LeftMargin": 154.0,
+            "RightMargin": 382.0,
+            "TopMargin": 623.8885,
+            "BottomMargin": 409.1115,
+            "Tag": 29,
+            "ActionTag": -1839059284,
             "Size": {
-              "X": 114.0,
-              "Y": 114.0
+              "X": 104.0,
+              "Y": 103.0
             },
-            "Name": "cancelBtn",
+            "Name": "exitBtn",
             "ctype": "ButtonObjectData"
           },
           {
@@ -148,63 +149,64 @@
             },
             "PressedFileData": {
               "Type": "Normal",
-              "Path": "texture/btn_replay.png",
+              "Path": "texture/3.png",
               "Plist": ""
             },
             "NormalFileData": {
               "Type": "Normal",
-              "Path": "texture/btn_replay.png",
+              "Path": "texture/3-1.png",
               "Plist": ""
             },
             "Scale9Enable": true,
-            "Scale9OriginX": 19,
-            "Scale9OriginY": 9,
-            "Scale9Width": 215,
-            "Scale9Height": 70,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 74,
+            "Scale9Height": 82,
             "OutlineColor": {
               "G": 0,
               "B": 0
             },
             "ShadowColor": {
-              "G": 127,
-              "B": 80
+              "R": 110,
+              "G": 110,
+              "B": 110
             },
             "ShadowOffsetX": 2.0,
             "ShadowOffsetY": -2.0,
             "TouchEnable": true,
             "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
+              "ScaleX": 0.5481,
+              "ScaleY": 0.5326
             },
             "Position": {
-              "X": 206.9997,
-              "Y": 339.9991
+              "X": 457.0,
+              "Y": 464.0
             },
             "Scale": {
-              "ScaleX": 0.8952,
-              "ScaleY": 0.9091
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
             },
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.3234,
-              "Y": 0.2993
+              "X": 0.7141,
+              "Y": 0.4085
             },
             "PreSize": {
-              "X": 0.3875,
-              "Y": 0.0775
+              "X": 0.1625,
+              "Y": 0.0915
             },
-            "LeftMargin": 82.9997,
-            "RightMargin": 309.0003,
-            "TopMargin": 752.0009,
-            "BottomMargin": 295.9991,
-            "Tag": 25,
-            "ActionTag": -93096825,
+            "LeftMargin": 400.0,
+            "RightMargin": 136.0,
+            "TopMargin": 623.3885,
+            "BottomMargin": 408.6115,
+            "Tag": 30,
+            "ActionTag": -1820076668,
             "Size": {
-              "X": 248.0,
-              "Y": 88.0
+              "X": 104.0,
+              "Y": 104.0
             },
-            "Name": "exitBtn",
+            "Name": "cancelBtn",
             "ctype": "ButtonObjectData"
           }
         ],
@@ -217,9 +219,11 @@
       },
       "UsedResources": [
         "Default/Button_Disable.png",
-        "texture/background0.png",
-        "texture/btn_home.png",
-        "texture/btn_replay.png"
+        "texture/1.png",
+        "texture/2.png",
+        "texture/2-1.png",
+        "texture/3.png",
+        "texture/3-1.png"
       ],
       "ctype": "GameFileData"
     }

@@ -1,5 +1,5 @@
 {
-  "ID": "63590104-90c1-4c09-a4f0-6b5619fa9a9d",
+  "ID": "c8351759-6af4-4663-91f8-61f0a1cd487a",
   "Version": "3.10.0.0",
   "Name": "GameOverLayer",
   "Content": {
@@ -143,17 +143,17 @@
             },
             "PreSize": {
               "X": 0.075,
-              "Y": 0.0211
+              "Y": 0.0246
             },
             "LeftMargin": 296.0,
             "RightMargin": 296.0,
-            "TopMargin": 300.1174,
-            "BottomMargin": 811.8826,
+            "TopMargin": 298.1174,
+            "BottomMargin": 809.8826,
             "Tag": 12,
             "ActionTag": -1042190795,
             "Size": {
               "X": 48.0,
-              "Y": 24.0
+              "Y": 28.0
             },
             "Name": "Text_1",
             "ctype": "TextObjectData"
@@ -196,17 +196,17 @@
             },
             "PreSize": {
               "X": 0.075,
-              "Y": 0.0211
+              "Y": 0.0246
             },
             "LeftMargin": 296.0,
             "RightMargin": 296.0,
-            "TopMargin": 390.7521,
-            "BottomMargin": 721.2479,
+            "TopMargin": 388.7521,
+            "BottomMargin": 719.2479,
             "Tag": 13,
             "ActionTag": -690073802,
             "Size": {
               "X": 48.0,
-              "Y": 24.0
+              "Y": 28.0
             },
             "Name": "Text_1_0",
             "ctype": "TextObjectData"
@@ -745,7 +745,6 @@
       },
       "UsedResources": [
         "Default/Button_Disable.png",
-        "Default/ImageFile.png",
         "texture/arrow.png",
         "texture/background0.png",
         "texture/btn_gameCenter.png",

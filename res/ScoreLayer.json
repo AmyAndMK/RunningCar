@@ -1,6 +1,6 @@
 {
   "ID": "363e3321-2fc3-4927-a962-e0758e947a8a",
-  "Version": "2.3.1.2",
+  "Version": "3.10.0.0",
   "Name": "ScoreLayer",
   "Content": {
     "Content": {
@@ -14,6 +14,52 @@
       "ObjectData": {
         "Tag": 12,
         "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/scoreBg.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 15,
+            "Scale9Width": 131,
+            "Scale9Height": 70,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.5,
+              "Y": 351.1163
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5008,
+              "Y": 0.7315
+            },
+            "PreSize": {
+              "X": 0.2516,
+              "Y": 0.2083
+            },
+            "LeftMargin": 240.0,
+            "RightMargin": 239.0,
+            "TopMargin": 78.8837,
+            "BottomMargin": 301.1163,
+            "Tag": 16,
+            "ActionTag": -2096155406,
+            "Size": {
+              "X": 161.0,
+              "Y": 100.0
+            },
+            "Name": "Image_2",
+            "ctype": "ImageViewObjectData"
+          },
           {
             "IsCustomSize": true,
             "FontSize": 36,
@@ -71,41 +117,42 @@
               "Plist": ""
             },
             "Scale9Enable": true,
-            "Scale9OriginX": 0,
-            "Scale9OriginY": 0,
-            "Scale9Width": 0,
-            "Scale9Height": 0,
+            "Scale9Width": 340,
+            "Scale9Height": 129,
+            "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 320.0,
-              "Y": 252.1163
+              "X": 309.4774,
+              "Y": 235.5778
             },
             "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
+              "ScaleX": 2.6945,
+              "ScaleY": 1.6571
             },
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5252
+              "X": 0.4836,
+              "Y": 0.4908
             },
             "PreSize": {
               "X": 0.2688,
               "Y": 0.1563
             },
-            "LeftMargin": 234.0,
-            "RightMargin": 234.0,
-            "TopMargin": 190.3837,
-            "BottomMargin": 214.6163,
+            "HorizontalEdge": "RightEdge",
+            "LeftMargin": 223.4774,
+            "RightMargin": 244.5226,
+            "TopMargin": 206.9222,
+            "BottomMargin": 198.0778,
+            "CallBackType": "Touch",
             "Tag": 17,
             "ActionTag": -51312629,
             "Size": {
-              "X": 340.0,
-              "Y": 129.0
+              "X": 172.0,
+              "Y": 75.0
             },
             "Name": "tipPic",
             "ctype": "ImageViewObjectData"
@@ -119,7 +166,8 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "texture/guide_text.png"
+        "texture/guide_text.png",
+        "texture/scoreBg.png"
       ],
       "ctype": "GameFileData"
     }

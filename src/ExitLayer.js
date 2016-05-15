@@ -43,6 +43,7 @@ var ExitLayer = cc.Layer.extend({
 			else if (btn.name = "cancelBtn")
 			{
 				this.visible = false;
+				cc.director.resume();
 			}
 		}
 	}
