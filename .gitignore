@@ -23,3 +23,5 @@ simulator/
 .idea/MyJSGame.iml
 
 .idea/workspace.xml
+
+publish/android/RunningCar-release-signed.apk
