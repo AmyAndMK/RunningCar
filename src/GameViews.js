@@ -6,7 +6,7 @@
 //背景墙
 var bgSize = null;
 var obSize = {width:120,height:287};
-var minLimit = {between:48,width:88,scaleCnt:3};
+var minLimit = {between:48,width:64,scaleCnt:3};
 var betweenOffSetX  = 120;
 var leftW = 0;//除去左边障碍物后视屏剩下的宽度
 var GameBgLayer = cc.Layer.extend({
@@ -171,26 +171,39 @@ var GameView = cc.Layer.extend({
     titleLB:null,
     waitSoundId:0,
     exitLayer : null,
+    space : null,
+    ball : null,
+    body : null,
+    shape : null,
+    _debugNode : null,
+    cnt : null,
+    base : null,
+    baseRatio : null,
+    _drawNode : null,
     init:function () {
-        // this._super();
-        // this.ids = {};
-        // this.unused_sprites = [];
-        // titleLB = new cc.LabelTTF("LLLLL","Aria",12);
-        // var size = cc.winSize;
-        // var centerX = size.width / 2;
-        // var centerY = size.height / 2;
-
-        // titleLB.anchorX = 0.5;
-        // titleLB.anchorY = 0.5;
-        // titleLB.scaleX = 3;
-        // titleLB.scaleY = 3;
-        // titleLB.color = cc.color._getRed;
-        // titleLB.setPosition(centerX,centerY);
-        // this.addChild(titleLB,10,2);
-    },
-    ctor:function(){
         this._super();
+        this.ids = {};
+        this.unused_sprites = [];
+        titleLB = new cc.LabelTTF("LLLLL","Aria",12);
+        var size = cc.winSize;
+        var centerX = size.width / 2;
+        var centerY = size.height / 2;
+
+        titleLB.anchorX = 0.5;
+        titleLB.anchorY = 0.5;
+        titleLB.scaleX = 3;
+        titleLB.scaleY = 3;
+        titleLB.color = cc.color._getRed;
+        titleLB.setPosition(centerX,centerY);
+        this.addChild(titleLB,10,2);
+    },
+    ctor:function(space){
+        this._super();
+        this.space = space;
+
         this.init();
+
+        this.scheduleUpdate();
 
         this.self = this;
         this.gameBg = new GameBgLayer();
@@ -227,12 +240,22 @@ var GameView = cc.Layer.extend({
         this.gameBestScore = bestScore;
 
         exitLayer = new ExitLayer();
-        this.addChild(exitLayer,6);
+        this.addChild(exitLayer,10);
         exitLayer.visible = false;
+
+        this._debugNode = new cc.PhysicsDebugNode(this.space );
+        this._debugNode.visible = false ;
+        this.addChild( this._debugNode,10);
 
         if(cc.sys.isNative && cc.sys.os == cc.sys.OS_ANDROID)
             this.createBackButtonListener();
 
+        this.cnt = 0;
+        this.base = 200.0;
+        this.baseRatio = 200.0;
+
+        this._drawNode = new cc.DrawNode();
+        this.addChild(this._drawNode, 11);
         return true;
     },
     nextGen:function(restart=false){
@@ -250,11 +273,13 @@ var GameView = cc.Layer.extend({
         this.obLayer.generateOb();
 
         var prevObCenterX = this.obLayer.prevPosX;
-        var moveBy = new cc.MoveBy(prevObCenterX/ 500,cc.p(-prevObCenterX,0));
+
+        var moveTime = prevObCenterX / 750;
+        var moveBy = new cc.MoveBy(moveTime,cc.p(-prevObCenterX,0));
         var gap = this.ps.player.x;
         gap = gap < prevObCenterX ? prevObCenterX : gap;
         //gap = start ? -gap : gap;
-        var cloneMoveBy = new cc.MoveTo(prevObCenterX / 500,cc.p(this.obLayer.getRealW(this.obLayer.prevOb) * 0.5,this.ps.player.y));
+        var cloneMoveBy = new cc.MoveTo(moveTime,cc.p(this.obLayer.getRealW(this.obLayer.prevOb) * 0.5,this.ps.player.y));
         this.stickSprite.x = this.obLayer.prevOb.getContentSize().width * this.obLayer.prevOb.getScaleX();
         this.stickSprite.y = obSize.height;
         this.audioEngine.playEffect(res.vitory_mp3);
@@ -304,19 +329,19 @@ var GameView = cc.Layer.extend({
         //titleLB.setString("stopX");
         this.unschedule(this.updateDB);
         this._start = false;
-            //schedule的响应事件对js的function包裹消耗是非常敏感的
-            cc.log(this.stickSprite.getRealH());
-            var data = this.stickSprite.getRealH();
-            var callFunc = cc.CallFunc(this.onEndGrow,this,data);
-            this.stickSprite.runAction
+        //schedule的响应事件对js的function包裹消耗是非常敏感的
+        cc.log(this.stickSprite.getRealH());
+        var data = this.stickSprite.getRealH();
+        var callFunc = cc.CallFunc(this.onEndGrow,this,data);
+        this.stickSprite.runAction
+        (
+            cc.sequence
             (
-                cc.sequence
-                (
-                    cc.delayTime(0.3),
-                    cc.rotateBy(0.1, 90),
-                    callFunc
-                )
-            );
+                cc.delayTime(0.3),
+                cc.rotateBy(0.1, 90),
+                callFunc
+            )
+        );
 
     },
     updateDB:function(dt){
@@ -326,6 +351,83 @@ var GameView = cc.Layer.extend({
         cc.log("a"+scaleY);
 
     },
+    generateCurline:function(impulse){
+        var dt = 0.01;
+        var points = [];
+        var x = this.ball.x;
+        var y = this.ball.y;
+
+        var vx = impulse.x;
+        var vy = impulse.y;
+        var g = -this.space.gravity.y;
+        for (var i = 50; i >= 0; i--) {
+            points.push(cc.p(x, y));
+            x += vx * dt;
+            y += vy * dt - 0.5 * g * dt * dt;
+            vy -= g * dt;
+        };
+
+        var color = cc.color(84, 84, 84, 128);
+        this._drawNode.clear();
+        for (var i = 0; i < 50; i++) {
+            this._drawNode.drawSegment(points[i],points[i+1],1.0,color);
+        }
+    },
+    update:function(delta)
+    {
+        this.space.step(delta);
+
+        //已经发射
+        if (!this._start && Math.abs(this.stickSprite.y - this.ball.y) < 2) {
+            var vel = this.ball.getBody().getVel();
+            if (vel.y < 0) {
+                //this.ball.removeFromParent(true);
+                //this.ball = null;
+                this._start = true;
+                titleLB.setString("DDDD");
+                //this.space.removeShape(this.shape);
+
+                this.body = new cp.Body(Infinity, Infinity);
+                this.body.nodeIdleTime = Infinity;
+                this.body.p = cc.p(this.ball.x, this.ball.y);
+                //this.space.addBody(this.body);
+                titleLB.setString("361");
+                this.ball.setBody(this.body);
+                titleLB.setString("XXXX");
+                //this.space.deactivateBody(this.shape.getBody());
+                titleLB.setString("360");
+            };
+        }
+    },
+    initBall:function(){
+        this.cnt += 1;
+        titleLB.setString(this.cnt);
+        this.ball = cc.PhysicsSprite.create(res.ball);
+        // 2. init the runner physic body
+        // this.body = new cp.Body(Infinity, Infinity);
+        // this.body.nodeIdleTime = Infinity;
+        // //cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
+        // //3. set the position of the runner
+        // this.body.p = cc.p(this.stickSprite.x, this.stickSprite.y);
+        //4. apply impulse to the body
+        //this.body.applyForce(cp.v(1500, 0), cp.v(0, 0));//run speed
+        //5. add the created body to space
+
+        //this.space.addBody(this.body);
+        //6. create the shape for the body
+        //this.shape = new cp.BoxShape(this.body, contentSize.width, contentSize.height);
+        //7. add shape to space
+        //this.space.addShape(this.shape);
+        //8. set body to the physic sprite
+        this.ball.setBody(this.space.staticBody);
+
+        //this.body.sleep();
+
+        // this.space.deactivateBody(this.body);
+        this.addChild(this.ball);
+        this.ball.setPosition(this.stickSprite.x, this.stickSprite.y);
+        //titleLB.setString(this.cnt);
+    },
     onTouchBegan:function(touch, event) {
         //titleLB.setString("onTouchBegan");
         var self = event.getCurrentTarget();
@@ -334,21 +436,67 @@ var GameView = cc.Layer.extend({
         };
         //TEST
         // self.ps.player.y += 150;
-        cc.log("I "+event.getCurrentTarget());
+        //titleLB.setString("I "+event.getCurrentTarget());
         if (self._start) {
-            cc.log("I picked a tile!!");
-            self.startX();
+            titleLB.setString("I picked a tile!!");
+            //self.startX();
+            self.initBall();
+
+            var pos = touch.getLocation();
+            var impulse = self.getCurImpulse(pos);
+            self.generateCurline(impulse);
             return true;
         }
         return false;
     },
+    shootBall:function(impulse){
+        var self = this;
+        this._drawNode.clear();
+        var contentSize = self.ball.getContentSize();
+        self.body =  new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
+        self.body.p = cc.p(self.ball.x, self.ball.y);
+        //var body = self.shape.getBody();
+        //body.active();
+        self.body.applyImpulse(cp.v(impulse.x, impulse.y), cp.v(0, 0));//run speed
+
+        titleLB.setString("428");
+        self.space.addBody(self.body);
+
+        self.shape = new cp.BoxShape(self.body, contentSize.width, contentSize.height);
+        self.space.addShape(self.shape);
+
+        self.ball.setBody(self.body);
+        titleLB.setString("434");
+    },
+    getCurImpulse:function(pos){
+        pos.x -= this.stickSprite.x;
+        pos.y -= this.stickSprite.y;
+
+        var impulse = cc.pNormalize(pos);
+        var xratio = pos.x / this.baseRatio;
+        var yratio = pos.y / this.baseRatio;
+        var ratio = Math.max(Math.max(xratio, yratio), 1.0);
+
+        cc.pMultIn(impulse, this.base * ratio);
+
+        return impulse;
+    },
     onToucheEnded:function(touch,event){
-        //titleLB.setString("onToucheEnded");
         var self = event.getCurrentTarget();
-        cc.log("touch End!!");
-        self.stopX();
+
+        self._start = false;
+        // this.space.activateBody(this.body);
+        var pos = touch.getLocation();
+        self.shootBall(self.getCurImpulse(pos));
         return true;
     },
+    onTouchMoved:function(touch,event){
+        titleLB.setString("moved");
+        var self = event.getCurrentTarget();
+        var pos = touch.getLocation();
+        var impulse = self.getCurImpulse(pos);
+        self.generateCurline(impulse);
+    },  
     onTouchesEnded:function(touches, event) {
             //titleLB.setString("onTouchesEnded");
             //TEST
@@ -358,57 +506,24 @@ var GameView = cc.Layer.extend({
     startGame:function(restart=false){
         var self = this;
 
-        //TEST
-        /*
-        if (cc.sys.os == cc.sys.OS_OSX) 
-            {
-                //self.ps.player.y += 250;
-            };
-
-        if (cc.sys.os == cc.sys.OS_ANDROID) 
-            {
-                //self.ps.player.x += 250;
-            };
-        */
-
-        // var listener = cc.EventListener.create({
-        //     event: cc.EventListener.TOUCH_ONE_BY_ONE,
-        //     swallowTouches: false,
-        //     onTouchBegan:self.onTouchBegan,
-        //     onTouchEnded:self.onToucheEnded
-        // });
-        // cc.log(this.isTouchEnabled ? "true": "false");
         this.isTouchEnabled = true;
-        // cc.log(this.isTouchEnabled ? "true": "false");
 
-        // cc.log(this.isTouchEnabled ? "true": "false");
-        // self.userInteractionEnabled = true;
-        // cc.log(this.isTouchEnabled ? "true": "false");
-
-       this.nextGen(restart);
+        this.nextGen(restart);
 
 
-       this.gameScore = 0;
+        this.gameScore = 0;
 
-       this.tipLayer.visible = true;
-       this.tipLayer.scoreLb.setString(0);
-       this.tipLayer.setLocalZOrder(10);
+        this.tipLayer.visible = true;
+        this.tipLayer.scoreLb.setString(0);
+        this.tipLayer.setLocalZOrder(10);
 
-        //if (!restart) {
-            cc.eventManager.addListener({
+        cc.eventManager.addListener({
             event: cc.EventListener.TOUCH_ONE_BY_ONE,
             swallowTouches: true,
             onTouchBegan:self.onTouchBegan,
-            onTouchEnded:self.onToucheEnded
-            },this);
-
-        //}
-        //TEST
-        // if( 'touches' in cc.sys.capabilities )
-        //     cc.eventManager.addListener({
-        //         event: cc.EventListener.TOUCH_ALL_AT_ONCE,
-        //         onTouchesEnded:self.onTouchesEnded
-        //     }, this);
+            onTouchEnded:self.onToucheEnded,
+            onTouchMoved:self.onTouchMoved
+        },this);
     },
     endGame:function(){
         //cc.eventManager.removeAllListeners();
@@ -416,27 +531,18 @@ var GameView = cc.Layer.extend({
     },
     toHome:function(){
         gameOverLayer.dismissMenu(this);
-        //titleLB.setString("442");
+
         this.obLayer.beginInit();
-        //titleLB.setString("443");
         if(this.obLayer.nextOb){
             this.obLayer.nextOb.removeFromParent(true);
             this.obLayer.nextOb = null;
         }
-        //titleLB.setString("448");
-        // if(this.oldStick){
-        //     //titleLB.setString("4511");
-        //     //this.oldStick.removeFromParent(true);
-        //     //titleLB.setString("4513");
-        //     this.oldStick = null;
-        // }
-        //titleLB.setString("451");
+
         if (this.stickSprite) {
             this.stickSprite.removeFromParent(true);
         }
 
         this.tipLayer.dismissMenu(this);
-        //titleLB.setString("454");
         menuLayer.popUp();
 
         this.ps.player.x = bgSize.width /2;
@@ -546,7 +652,7 @@ var GameView = cc.Layer.extend({
     },
     playVic:function(){
         this.audioEngine.playEffect(res.vitory_mp3);
-        //this._start = true;
+        this._start = true;
         this.obLayer.stopAllActions();
         this.ps.player.stopAllActions();
         this.nextGen();

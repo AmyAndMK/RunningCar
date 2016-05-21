@@ -40,7 +40,8 @@ var res = {
     gameEnd_json:"res/GameOverLayer.json",
     score_json:"res/ScoreLayer.json",
     loader_json:"res/LoaderLayer.json",
-    exitlayer_json:"res/ExitLayer.json"
+    exitlayer_json:"res/ExitLayer.json",
+    ball:"res/texture/ball.png"
 };
 
 var g_fonts = [{

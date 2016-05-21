@@ -2,7 +2,15 @@ var LoaderLayer = cc.Layer.extend({
 	ctor:function(){
 		this._super();
 
-		this.addChild(ccs.load(res.loader_json).node);
+		var node = ccs.load(res.loader_json).node;
+
+		this.addChild(node);
+
+		var rotator = ccui.helper.seekWidgetByName(node, "Image_4");
+
+		var rotate = new cc.RotateBy(0.1,90);
+		
+		rotator.runAction(cc.Repeat.create(rotate, 120));
 
 		return true;
 	}

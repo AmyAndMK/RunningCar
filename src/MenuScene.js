@@ -79,7 +79,7 @@ var FrontLayer = cc.Layer.extend({
 //             }
 
         //str=JSON.stringify(self.capabilities);
-        titleLB = new cc.LabelTTF(str,"微软雅黑",24);
+        titleLB = new cc.LabelTTF(str,"微软雅黑",72);
 
         //create the move action
         //Jump(To | By) func 需要全量参数
@@ -118,21 +118,31 @@ var FrontLayer = cc.Layer.extend({
 
 var MenuScene = cc.Scene.extend({
     gameOverLayer:null,
+    space : null,
     ctor:function (bPortrait) {
         this._super();
-        this.init();},
+        this.init();
+    },
     onEnter:function () {
         this._super();
+        this.initPhysics();
+
         menuLayer = new FrontLayer();
         menuLayer.delegate = this;
         this.addChild(menuLayer);
 
-        gameLayer = new GameView();
+        gameLayer = new GameView(this.space);
         this.addChild(gameLayer,-1,1);
-
-
-
-
+    },
+    initPhysics:function(){
+        this.space = new cp.Space();
+        this.space.gravity = cp.v(0, -700);
+        // 3. set up Walls
+        // var wallBottom = new cp.SegmentShape(this.space.staticBody,
+        //     cp.v(0, g_groundHight),// start point
+        //     cp.v(4294967295, g_groundHight),// MAX INT:4294967295
+        //     0);// thickness of wall
+        // this.space.addStaticShape(wallBottom);
     }
 
 });
