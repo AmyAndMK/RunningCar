@@ -6,7 +6,7 @@
 //背景墙
 var bgSize = null;
 var obSize = {width:120,height:287};
-var minLimit = {between:48,width:88,scaleCnt:3};
+var minLimit = {between:48,width:64,scaleCnt:3};
 var betweenOffSetX  = 120;
 var leftW = 0;//除去左边障碍物后视屏剩下的宽度
 var GameBgLayer = cc.Layer.extend({
@@ -167,6 +167,7 @@ var GameView = cc.Layer.extend({
     _toHome:false,
     gameScore:0,
     gameBestScore:0,
+    topScores:null,
     oldStick:null,
     titleLB:null,
     waitSoundId:0,
@@ -223,8 +224,19 @@ var GameView = cc.Layer.extend({
         this.tipLayer.y = bgSize.height - this.tipLayer.getContentSize().height;
         this.addChild(this.tipLayer);
         this.tipLayer.visible = false;
-        var bestScore =   cc.sys.localStorage.getItem("bestS")? cc.sys.localStorage.getItem("bestS"):0;
-        this.gameBestScore = bestScore;
+        var bestScore = cc.sys.localStorage.getItem("topScores");
+        //bestScore = bestScore ? bestScore : "";
+        // // //? cc.sys.localStorage.getItem("topScores"):[]
+        if (bestScore) {
+            this.topScores = JSON.parse(bestScore);
+        }
+        else
+        {
+            this.topScores = [];
+        }
+        
+
+        this.gameBestScore = this.topScores.length > 0 ? parseInt(this.topScores[0],10) : 0;
 
         exitLayer = new ExitLayer();
         this.addChild(exitLayer,6);
@@ -250,11 +262,13 @@ var GameView = cc.Layer.extend({
         this.obLayer.generateOb();
 
         var prevObCenterX = this.obLayer.prevPosX;
-        var moveBy = new cc.MoveBy(prevObCenterX/ 500,cc.p(-prevObCenterX,0));
+
+        var moveTime = prevObCenterX / 850;
+        var moveBy = new cc.MoveBy(moveTime,cc.p(-prevObCenterX,0));
         var gap = this.ps.player.x;
         gap = gap < prevObCenterX ? prevObCenterX : gap;
         //gap = start ? -gap : gap;
-        var cloneMoveBy = new cc.MoveTo(prevObCenterX / 500,cc.p(this.obLayer.getRealW(this.obLayer.prevOb) * 0.5,this.ps.player.y));
+        var cloneMoveBy = new cc.MoveTo(moveTime,cc.p(this.obLayer.getRealW(this.obLayer.prevOb) * 0.5,this.ps.player.y));
         this.stickSprite.x = this.obLayer.prevOb.getContentSize().width * this.obLayer.prevOb.getScaleX();
         this.stickSprite.y = obSize.height;
         this.audioEngine.playEffect(res.vitory_mp3);
@@ -329,9 +343,6 @@ var GameView = cc.Layer.extend({
     onTouchBegan:function(touch, event) {
         //titleLB.setString("onTouchBegan");
         var self = event.getCurrentTarget();
-        if (self == null) {
-            //titleLB.setString("self is null");
-        };
         //TEST
         // self.ps.player.y += 150;
         cc.log("I "+event.getCurrentTarget());
@@ -500,8 +511,47 @@ var GameView = cc.Layer.extend({
                 //titleLB.setString("448");
                 this.gameBestScore = this.gameScore;
                 //titleLB.setString("450");
-                cc.sys.localStorage.setItem('bestS',this.gameScore);
+                
                 //titleLB.setString("452");
+            }
+
+            if (this.gameScore > 0 && this.topScores)
+            {
+                // titleLB.setString("515");
+                function sortNumber(a,b)
+                {
+                    return b - a
+                }
+                this.topScores.sort(sortNumber);
+                // var str = "";
+                //     for (var i = this.topScores.length - 1; i >= 0; i--) {
+                //         str += this.topScores[i].toString();
+                //         str += "+";
+                //     };
+                    
+                // titleLB.setString(str);
+                // //if (this.topScores.indexOf(this.gameScore) == -1) {
+                var found = false;
+                for (var i = this.topScores.length - 1; i >= 0; i--) {
+                    if (this.topScores[i] == this.gameScore)
+                    {
+                        found = true;
+                    }
+                };
+                if (!found){
+                    //titleLB.setString("517");
+                    // for (var i = this.topScores.length - 1; i > insertIdx; i--) {
+                    //     this.topScores[i] = this.topScores[i - 1];
+                    // }
+                    // this.topScores[insertIdx] = this.gameScore;
+                    this.topScores.push(this.gameScore.toString());
+                    this.topScores.sort(sortNumber);
+                    if (this.topScores.length > 10) {
+                        this.topScores.pop();
+                    };
+                }
+                cc.sys.localStorage.setItem("topScores", JSON.stringify(this.topScores));
+                
             }
             this.endGame();
 
@@ -557,6 +607,10 @@ var GameView = cc.Layer.extend({
         var seq = cc.sequence(scaleTip,scaleB);
         this.tipLayer.scoreLb.runAction(seq);
 
+        if (this.gameScore == 1) {
+            var fade = cc.FadeOut.create(1);
+            this.tipLayer.tipPic.runAction(fade);
+        };
     },
     startPlayWaitSound:function()
     {
@@ -610,11 +664,11 @@ var TipLayer = cc.Layer.extend({
         this.anchorX = 0.5;
         this.anchorY = 0.5;
 
-        var mainNode = new cc.Node();
-        this.addChild(mainNode);
+        // var mainNode = new cc.Node();
+        // this.addChild(mainNode);
 
         var node = ccs.load(res.score_json).node;
-        mainNode.addChild(node);
+        this.addChild(node);
 
         this.height = node.getContentSize().height;
         //this.tipPic = node.getChildByName("tipPic");
@@ -628,6 +682,8 @@ var TipLayer = cc.Layer.extend({
         node.y = this.getContentSize().height * 0.5;
         cc.log(this.getContentSize().height+"ddd");
         //this.addChild(node);
+
+        this.isTouchEnabled = false;
 
         return true;
     },

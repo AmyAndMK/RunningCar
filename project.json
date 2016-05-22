@@ -16,6 +16,7 @@
         "src/GameViews.js",
         "src/GameOverLayer.js",
         "src/LoaderScene.js",
-        "src/ExitLayer.js"
+        "src/ExitLayer.js",
+        "src/RankScene.js"
     ]
 }

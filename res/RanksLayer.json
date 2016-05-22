@@ -1,0 +1,1017 @@
+{
+  "ID": "63ae7f5d-846b-47cd-ad47-25f2e496d5d8",
+  "Version": "3.10.0.0",
+  "Name": "RanksLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 40,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/background511.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 211,
+            "Scale9OriginY": 374,
+            "Scale9Width": 218,
+            "Scale9Height": 388,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 568.8724
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5008
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "TopMargin": -0.8723,
+            "BottomMargin": 0.8724,
+            "Tag": 41,
+            "ActionTag": 246054450,
+            "Size": {
+              "X": 640.0,
+              "Y": 1136.0
+            },
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "No.1",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 202.2504,
+              "Y": 797.0646
+            },
+            "Scale": {
+              "ScaleX": 1.6489,
+              "ScaleY": 1.6489
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.316,
+              "Y": 0.7016
+            },
+            "PreSize": {
+              "X": 0.0672,
+              "Y": 0.0202
+            },
+            "LeftMargin": 180.7504,
+            "RightMargin": 416.2496,
+            "TopMargin": 327.4354,
+            "BottomMargin": 785.5646,
+            "Tag": 133,
+            "ActionTag": 1289904366,
+            "Size": {
+              "X": 43.0,
+              "Y": 23.0
+            },
+            "Name": "Rank_1",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 36,
+            "LabelText": "0000000",
+            "HorizontalAlignmentType": "HT_Right",
+            "VerticalAlignmentType": "VT_Bottom",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 352.9066,
+              "Y": 797.0646
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5514,
+              "Y": 0.7016
+            },
+            "PreSize": {
+              "X": 0.2203,
+              "Y": 0.037
+            },
+            "LeftMargin": 282.4066,
+            "RightMargin": 216.5934,
+            "TopMargin": 317.9354,
+            "BottomMargin": 776.0646,
+            "Tag": 134,
+            "ActionTag": 1968350906,
+            "Size": {
+              "X": 141.0,
+              "Y": 42.0
+            },
+            "Name": "Score_1",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "No.2",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 202.2504,
+              "Y": 737.0646
+            },
+            "Scale": {
+              "ScaleX": 1.6489,
+              "ScaleY": 1.6489
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.316,
+              "Y": 0.6488
+            },
+            "PreSize": {
+              "X": 0.0672,
+              "Y": 0.0202
+            },
+            "LeftMargin": 180.7504,
+            "RightMargin": 416.2496,
+            "TopMargin": 387.4354,
+            "BottomMargin": 725.5646,
+            "Tag": 30,
+            "ActionTag": 784983164,
+            "Size": {
+              "X": 43.0,
+              "Y": 23.0
+            },
+            "Name": "Rank_2",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 36,
+            "LabelText": "0000000",
+            "HorizontalAlignmentType": "HT_Right",
+            "VerticalAlignmentType": "VT_Bottom",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 352.9066,
+              "Y": 737.0646
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5514,
+              "Y": 0.6488
+            },
+            "PreSize": {
+              "X": 0.2203,
+              "Y": 0.037
+            },
+            "LeftMargin": 282.4066,
+            "RightMargin": 216.5934,
+            "TopMargin": 377.9354,
+            "BottomMargin": 716.0646,
+            "Tag": 31,
+            "ActionTag": -1945154435,
+            "Size": {
+              "X": 141.0,
+              "Y": 42.0
+            },
+            "Name": "Score_2",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "No.3",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 202.2504,
+              "Y": 672.0646
+            },
+            "Scale": {
+              "ScaleX": 1.6489,
+              "ScaleY": 1.6489
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.316,
+              "Y": 0.5916
+            },
+            "PreSize": {
+              "X": 0.0672,
+              "Y": 0.0202
+            },
+            "LeftMargin": 180.7504,
+            "RightMargin": 416.2496,
+            "TopMargin": 452.4354,
+            "BottomMargin": 660.5646,
+            "Tag": 32,
+            "ActionTag": 1578504727,
+            "Size": {
+              "X": 43.0,
+              "Y": 23.0
+            },
+            "Name": "Rank_3",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 36,
+            "LabelText": "0000000",
+            "HorizontalAlignmentType": "HT_Right",
+            "VerticalAlignmentType": "VT_Bottom",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 352.9066,
+              "Y": 672.0646
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5514,
+              "Y": 0.5916
+            },
+            "PreSize": {
+              "X": 0.2203,
+              "Y": 0.037
+            },
+            "LeftMargin": 282.4066,
+            "RightMargin": 216.5934,
+            "TopMargin": 442.9354,
+            "BottomMargin": 651.0646,
+            "Tag": 33,
+            "ActionTag": -438248067,
+            "Size": {
+              "X": 141.0,
+              "Y": 42.0
+            },
+            "Name": "Score_3",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "No.4",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 202.2504,
+              "Y": 612.0646
+            },
+            "Scale": {
+              "ScaleX": 1.6489,
+              "ScaleY": 1.6489
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.316,
+              "Y": 0.5388
+            },
+            "PreSize": {
+              "X": 0.0672,
+              "Y": 0.0202
+            },
+            "LeftMargin": 180.7504,
+            "RightMargin": 416.2496,
+            "TopMargin": 512.4354,
+            "BottomMargin": 600.5646,
+            "Tag": 34,
+            "ActionTag": -1445475683,
+            "Size": {
+              "X": 43.0,
+              "Y": 23.0
+            },
+            "Name": "Rank_4",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 36,
+            "LabelText": "0000000",
+            "HorizontalAlignmentType": "HT_Right",
+            "VerticalAlignmentType": "VT_Bottom",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 352.9066,
+              "Y": 612.0646
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5514,
+              "Y": 0.5388
+            },
+            "PreSize": {
+              "X": 0.2203,
+              "Y": 0.037
+            },
+            "LeftMargin": 282.4066,
+            "RightMargin": 216.5934,
+            "TopMargin": 502.9354,
+            "BottomMargin": 591.0646,
+            "Tag": 35,
+            "ActionTag": 1810895343,
+            "Size": {
+              "X": 141.0,
+              "Y": 42.0
+            },
+            "Name": "Score_4",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "No.5",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 202.2504,
+              "Y": 534.0646
+            },
+            "Scale": {
+              "ScaleX": 1.6489,
+              "ScaleY": 1.6489
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.316,
+              "Y": 0.4701
+            },
+            "PreSize": {
+              "X": 0.0672,
+              "Y": 0.0202
+            },
+            "LeftMargin": 180.7504,
+            "RightMargin": 416.2496,
+            "TopMargin": 590.4354,
+            "BottomMargin": 522.5646,
+            "Tag": 36,
+            "ActionTag": -610979796,
+            "Size": {
+              "X": 43.0,
+              "Y": 23.0
+            },
+            "Name": "Rank_5",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 36,
+            "LabelText": "0000000",
+            "HorizontalAlignmentType": "HT_Right",
+            "VerticalAlignmentType": "VT_Bottom",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 352.9066,
+              "Y": 534.0646
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5514,
+              "Y": 0.4701
+            },
+            "PreSize": {
+              "X": 0.2203,
+              "Y": 0.037
+            },
+            "LeftMargin": 282.4066,
+            "RightMargin": 216.5934,
+            "TopMargin": 580.9354,
+            "BottomMargin": 513.0646,
+            "Tag": 37,
+            "ActionTag": -367781548,
+            "Size": {
+              "X": 141.0,
+              "Y": 42.0
+            },
+            "Name": "Score_5",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "No.6",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 202.2504,
+              "Y": 475.0646
+            },
+            "Scale": {
+              "ScaleX": 1.6489,
+              "ScaleY": 1.6489
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.316,
+              "Y": 0.4182
+            },
+            "PreSize": {
+              "X": 0.0672,
+              "Y": 0.0202
+            },
+            "LeftMargin": 180.7504,
+            "RightMargin": 416.2496,
+            "TopMargin": 649.4354,
+            "BottomMargin": 463.5646,
+            "Tag": 38,
+            "ActionTag": -2084168617,
+            "Size": {
+              "X": 43.0,
+              "Y": 23.0
+            },
+            "Name": "Rank_6",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 36,
+            "LabelText": "0000000",
+            "HorizontalAlignmentType": "HT_Right",
+            "VerticalAlignmentType": "VT_Bottom",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 352.9066,
+              "Y": 475.0646
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5514,
+              "Y": 0.4182
+            },
+            "PreSize": {
+              "X": 0.2203,
+              "Y": 0.037
+            },
+            "LeftMargin": 282.4066,
+            "RightMargin": 216.5934,
+            "TopMargin": 639.9354,
+            "BottomMargin": 454.0646,
+            "Tag": 39,
+            "ActionTag": -1430151577,
+            "Size": {
+              "X": 141.0,
+              "Y": 42.0
+            },
+            "Name": "Score_6",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "No.7",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 202.2504,
+              "Y": 411.0645
+            },
+            "Scale": {
+              "ScaleX": 1.6489,
+              "ScaleY": 1.6489
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.316,
+              "Y": 0.3619
+            },
+            "PreSize": {
+              "X": 0.0672,
+              "Y": 0.0202
+            },
+            "LeftMargin": 180.7504,
+            "RightMargin": 416.2496,
+            "TopMargin": 713.4354,
+            "BottomMargin": 399.5645,
+            "Tag": 40,
+            "ActionTag": 623699743,
+            "Size": {
+              "X": 43.0,
+              "Y": 23.0
+            },
+            "Name": "Rank_7",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 36,
+            "LabelText": "0000000",
+            "HorizontalAlignmentType": "HT_Right",
+            "VerticalAlignmentType": "VT_Bottom",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 352.9066,
+              "Y": 411.0645
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5514,
+              "Y": 0.3619
+            },
+            "PreSize": {
+              "X": 0.2203,
+              "Y": 0.037
+            },
+            "LeftMargin": 282.4066,
+            "RightMargin": 216.5934,
+            "TopMargin": 703.9354,
+            "BottomMargin": 390.0645,
+            "Tag": 41,
+            "ActionTag": 729838348,
+            "Size": {
+              "X": 141.0,
+              "Y": 42.0
+            },
+            "Name": "Score_7",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "No.8",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 202.2504,
+              "Y": 350.0646
+            },
+            "Scale": {
+              "ScaleX": 1.6489,
+              "ScaleY": 1.6489
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.316,
+              "Y": 0.3082
+            },
+            "PreSize": {
+              "X": 0.0672,
+              "Y": 0.0202
+            },
+            "LeftMargin": 180.7504,
+            "RightMargin": 416.2496,
+            "TopMargin": 774.4354,
+            "BottomMargin": 338.5646,
+            "Tag": 42,
+            "ActionTag": 1571204457,
+            "Size": {
+              "X": 43.0,
+              "Y": 23.0
+            },
+            "Name": "Rank_8",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 36,
+            "LabelText": "0000000",
+            "HorizontalAlignmentType": "HT_Right",
+            "VerticalAlignmentType": "VT_Bottom",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 352.9066,
+              "Y": 350.0646
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5514,
+              "Y": 0.3082
+            },
+            "PreSize": {
+              "X": 0.2203,
+              "Y": 0.037
+            },
+            "LeftMargin": 282.4066,
+            "RightMargin": 216.5934,
+            "TopMargin": 764.9354,
+            "BottomMargin": 329.0646,
+            "Tag": 43,
+            "ActionTag": 1408886999,
+            "Size": {
+              "X": 141.0,
+              "Y": 42.0
+            },
+            "Name": "Score_8",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "texture/3.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "texture/3-1.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 74,
+            "Scale9Height": 82,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 596.0,
+              "Y": 890.5175
+            },
+            "Scale": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9312,
+              "Y": 0.7839
+            },
+            "PreSize": {
+              "X": 0.1625,
+              "Y": 0.0915
+            },
+            "LeftMargin": 544.0,
+            "RightMargin": -8.0,
+            "TopMargin": 193.4825,
+            "BottomMargin": 838.5175,
+            "Tag": 44,
+            "ActionTag": 377217520,
+            "Size": {
+              "X": 104.0,
+              "Y": 104.0
+            },
+            "Name": "close_Btn",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 1136.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "Default/Button_Disable.png",
+        "texture/3.png",
+        "texture/3-1.png",
+        "texture/background511.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

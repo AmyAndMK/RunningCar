@@ -194,6 +194,10 @@ var GameOverLayer = cc.Layer.extend({
                             callBack = cc.CallFunc(gameOverPtr.toHome,gameOverPtr);
                             seq = cc.sequence(spawn,spawnB,callBack)
                         }
+                        else if (btn.name == "gameCBtn") {
+                            callBack = cc.CallFunc(gameOverPtr.toRankScene,gameOverPtr);
+                            seq = cc.sequence(spawn,spawnB,callBack)
+                        }
                         else{
                             seq = cc.sequence(spawn,spawnB);
                         }
@@ -266,6 +270,11 @@ var GameOverLayer = cc.Layer.extend({
     toHome:function()
     {
         gameOverPtr.delegate.toHome();
+    },
+    toRankScene:function()
+    {
+        var rankScene = new RankScene();
+        var scene = new cc.TransitionProgressInOut(0.2, rankScene);
+        cc.director.runScene(scene);
     }
-
 });

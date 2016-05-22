@@ -25,3 +25,7 @@ simulator/
 .idea/workspace.xml
 
 publish/
+
+res/ScoreLayer1.json
+
+.vscode/launch.json

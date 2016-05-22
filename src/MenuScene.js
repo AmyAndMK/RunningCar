@@ -44,42 +44,7 @@ var FrontLayer = cc.Layer.extend({
         this.addChild(menu,1,0);
 
         var str = "RunningCar";
-// if (cc.sys.os == cc.sys.OS_OSX || cc.sys.os == cc.sys.OS_ANDROID) 
-//             {
-//                 if ('touches' in cc.sys.capabilities) {
-//                     if (cc.sys.capabilities["touches"]) 
-//                     {
-//                         str =  "ht ";
-//                     }
-//                     else
-//                     {
-//                         str =  "nt ";
-//                     }
-                    
-//                 }
-
-//                 if ('mouse' in cc.sys.capabilities) {
-//                     if (cc.sys.capabilities["mouse"]) {
-//                         str +=  "hm ";
-//                     }
-//                     else
-//                     {
-//                         str +=  "nm ";
-//                     }
-//                 };
-                
-
-//                 if ('keyboard' in cc.sys.capabilities) {
-//                     if (cc.sys.capabilities["keyboard"]) {str +=  "hk ";}
-//                     else {str +=  "nk ";}
-                    
-//                 }
-
-                
-//             }
-
-        //str=JSON.stringify(self.capabilities);
-        titleLB = new cc.LabelTTF(str,"微软雅黑",24);
+        titleLB = new cc.LabelTTF(str,"微软雅黑",72);
 
         //create the move action
         //Jump(To | By) func 需要全量参数
