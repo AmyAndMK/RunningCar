@@ -119,7 +119,6 @@
             "Scale9Enable": true,
             "Scale9Width": 340,
             "Scale9Height": 129,
-            "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -140,14 +139,13 @@
             },
             "PreSize": {
               "X": 0.2688,
-              "Y": 0.1563
+              "Y": 0.1562
             },
             "HorizontalEdge": "RightEdge",
             "LeftMargin": 223.4774,
             "RightMargin": 244.5226,
             "TopMargin": 206.9222,
             "BottomMargin": 198.0778,
-            "CallBackType": "Touch",
             "Tag": 17,
             "ActionTag": -51312629,
             "Size": {
