@@ -95,9 +95,37 @@ var MenuScene = cc.Scene.extend({
         gameLayer = new GameView();
         this.addChild(gameLayer,-1,1);
 
+        exitLayer = new ExitLayer();
+        this.addChild(exitLayer);
+        exitLayer.visible = false;
 
+        if(cc.sys.isNative && cc.sys.os == cc.sys.OS_ANDROID)
+            this.createBackButtonListener();
+    },
+    createBackButtonListener: function(){
+        var self = this;
 
+        cc.eventManager.addListener({
+            event: cc.EventListener.KEYBOARD,
 
+            onKeyReleased:function(key, event) {
+                if(key == cc.KEY.back){
+                    // if (gameOverLayer.visible) {
+                    //     return;
+                    // }
+                    if (!exitLayer.visible) {
+                        exitLayer.visible = true;
+                        cc.director.pause();
+                    }
+                    else
+                    {
+                        exitLayer.visible = false;
+                        cc.director.resume();
+                    }
+                    //gameOverLayer.visible = false;
+                }
+            }
+        }, this);
     }
 
 });

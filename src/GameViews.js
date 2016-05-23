@@ -165,13 +165,9 @@ var GameView = cc.Layer.extend({
     self:null,
     _start:true,
     _toHome:false,
-    gameScore:0,
-    gameBestScore:0,
-    topScores:null,
     oldStick:null,
     titleLB:null,
     waitSoundId:0,
-    exitLayer : null,
     init:function () {
         // this._super();
         // this.ids = {};
@@ -224,26 +220,6 @@ var GameView = cc.Layer.extend({
         this.tipLayer.y = bgSize.height - this.tipLayer.getContentSize().height;
         this.addChild(this.tipLayer);
         this.tipLayer.visible = false;
-        var bestScore = cc.sys.localStorage.getItem("topScores");
-        //bestScore = bestScore ? bestScore : "";
-        // // //? cc.sys.localStorage.getItem("topScores"):[]
-        if (bestScore) {
-            this.topScores = JSON.parse(bestScore);
-        }
-        else
-        {
-            this.topScores = [];
-        }
-        
-
-        this.gameBestScore = this.topScores.length > 0 ? parseInt(this.topScores[0],10) : 0;
-
-        exitLayer = new ExitLayer();
-        this.addChild(exitLayer,6);
-        exitLayer.visible = false;
-
-        if(cc.sys.isNative && cc.sys.os == cc.sys.OS_ANDROID)
-            this.createBackButtonListener();
 
         return true;
     },
@@ -369,57 +345,20 @@ var GameView = cc.Layer.extend({
     startGame:function(restart=false){
         var self = this;
 
-        //TEST
-        /*
-        if (cc.sys.os == cc.sys.OS_OSX) 
-            {
-                //self.ps.player.y += 250;
-            };
+        this.nextGen(restart);
+ 
+        this.tipLayer.visible = true;
+        this.tipLayer.scoreLb.setString(0);
+        this.tipLayer.setLocalZOrder(10);
 
-        if (cc.sys.os == cc.sys.OS_ANDROID) 
-            {
-                //self.ps.player.x += 250;
-            };
-        */
+        cc.eventManager.addListener({
+        event: cc.EventListener.TOUCH_ONE_BY_ONE,
+        swallowTouches: true,
+        onTouchBegan:self.onTouchBegan,
+        onTouchEnded:self.onToucheEnded
+        },this);
 
-        // var listener = cc.EventListener.create({
-        //     event: cc.EventListener.TOUCH_ONE_BY_ONE,
-        //     swallowTouches: false,
-        //     onTouchBegan:self.onTouchBegan,
-        //     onTouchEnded:self.onToucheEnded
-        // });
-        // cc.log(this.isTouchEnabled ? "true": "false");
-        this.isTouchEnabled = true;
-        // cc.log(this.isTouchEnabled ? "true": "false");
-
-        // cc.log(this.isTouchEnabled ? "true": "false");
-        // self.userInteractionEnabled = true;
-        // cc.log(this.isTouchEnabled ? "true": "false");
-
-       this.nextGen(restart);
-
-
-       this.gameScore = 0;
-
-       this.tipLayer.visible = true;
-       this.tipLayer.scoreLb.setString(0);
-       this.tipLayer.setLocalZOrder(10);
-
-        //if (!restart) {
-            cc.eventManager.addListener({
-            event: cc.EventListener.TOUCH_ONE_BY_ONE,
-            swallowTouches: true,
-            onTouchBegan:self.onTouchBegan,
-            onTouchEnded:self.onToucheEnded
-            },this);
-
-        //}
-        //TEST
-        // if( 'touches' in cc.sys.capabilities )
-        //     cc.eventManager.addListener({
-        //         event: cc.EventListener.TOUCH_ALL_AT_ONCE,
-        //         onTouchesEnded:self.onTouchesEnded
-        //     }, this);
+        RankScoreManager.resetGameCurScore();
     },
     endGame:function(){
         //cc.eventManager.removeAllListeners();
@@ -507,52 +446,8 @@ var GameView = cc.Layer.extend({
             seq = cc.sequence(moveBy,cc.callFunc(this.stopPlayWaitSound,this),stickFunc,cc.spawn(jumpFall,rotate),callFunc);
             //titleLB.setString("431");
 
-            if(this.gameScore > this.gameBestScore){
-                //titleLB.setString("448");
-                this.gameBestScore = this.gameScore;
-                //titleLB.setString("450");
-                
-                //titleLB.setString("452");
-            }
+            RankScoreManager.CalcRankScore();
 
-            if (this.gameScore > 0 && this.topScores)
-            {
-                // titleLB.setString("515");
-                function sortNumber(a,b)
-                {
-                    return b - a
-                }
-                this.topScores.sort(sortNumber);
-                // var str = "";
-                //     for (var i = this.topScores.length - 1; i >= 0; i--) {
-                //         str += this.topScores[i].toString();
-                //         str += "+";
-                //     };
-                    
-                // titleLB.setString(str);
-                // //if (this.topScores.indexOf(this.gameScore) == -1) {
-                var found = false;
-                for (var i = this.topScores.length - 1; i >= 0; i--) {
-                    if (this.topScores[i] == this.gameScore)
-                    {
-                        found = true;
-                    }
-                };
-                if (!found){
-                    //titleLB.setString("517");
-                    // for (var i = this.topScores.length - 1; i > insertIdx; i--) {
-                    //     this.topScores[i] = this.topScores[i - 1];
-                    // }
-                    // this.topScores[insertIdx] = this.gameScore;
-                    this.topScores.push(this.gameScore.toString());
-                    this.topScores.sort(sortNumber);
-                    if (this.topScores.length > 10) {
-                        this.topScores.pop();
-                    };
-                }
-                cc.sys.localStorage.setItem("topScores", JSON.stringify(this.topScores));
-                
-            }
             this.endGame();
 
         }
@@ -560,8 +455,7 @@ var GameView = cc.Layer.extend({
             //titleLB.setString("442");
             //new cc.Sequence 和 cc.sequence 在单action时行为不同，
             //Sequence类有bug会导致单度action被double
-            this.gameScore += 1;
-
+            RankScoreManager.addGameCurScore(1);
 
             //var line = rightX - this.ps.GetPlayerWidth() * 0.5;
             var line = rightX - this.obLayer.getRealW(this.obLayer.nextOb) * 0.5;
@@ -581,18 +475,8 @@ var GameView = cc.Layer.extend({
     playDead:function(){
         this.audioEngine.playEffect(res.fall_mp3);
         this.audioEngine.playEffect(res.dead_mp3);
-        //titleLB.setString("playDead11");
-        // if (this.gameOverLayer == null) {
-        //     //titleLB.setString("gameOverLayer is null");
-        // }
-        //this.gameOverLayer.test();
-        //exitLayer.visible = true;
-        gameOverLayer.popMenu(this,this.gameScore,this.gameBestScore);
-        //this.addChild(this.gameOverLayer,100);
-        //this.gameOverLayer.visible = true;
-        //titleLB.setString("playDead2");
-        //this.gameOverLayer.setScoreS(this.gameScore,this.gameBestScore);
-        //titleLB.setString("playDead3");
+
+        gameOverLayer.popMenu(this,RankScoreManager.getGameCurScore(),RankScoreManager.getHighestScore());
     },
     playVic:function(){
         this.audioEngine.playEffect(res.vitory_mp3);
@@ -601,13 +485,13 @@ var GameView = cc.Layer.extend({
         this.ps.player.stopAllActions();
         this.nextGen();
 
-        this.tipLayer.scoreLb.setString(this.gameScore);
+        this.tipLayer.scoreLb.setString(RankScoreManager.getGameCurScore());
         var scaleTip = cc.ScaleTo(0.1,3,3);
         var scaleB = cc.ScaleTo(0.2,1,1);
         var seq = cc.sequence(scaleTip,scaleB);
         this.tipLayer.scoreLb.runAction(seq);
 
-        if (this.gameScore == 1) {
+        if (RankScoreManager.getGameCurScore() == 1) {
             var fade = cc.FadeOut.create(1);
             this.tipLayer.tipPic.runAction(fade);
         };
@@ -623,33 +507,6 @@ var GameView = cc.Layer.extend({
             return;
         this.audioEngine.stopEffect(waitSoundId);
         waitSoundId = 0;
-    },
-    createBackButtonListener: function(){
-        var self = this;
-
-        cc.eventManager.addListener({
-            event: cc.EventListener.KEYBOARD,
-
-            onKeyReleased:function(key, event) {
-                if(key == cc.KEY.back){
-                    if (gameOverLayer.visible) {
-                        return;
-                    }
-
-                    //cc.director.end(); //this will close app
-                    if (!exitLayer.visible) {
-                        exitLayer.visible = true;
-                        cc.director.pause();
-                    }
-                    else
-                    {
-                        exitLayer.visible = false;
-                        cc.director.resume();
-                    }
-                    //gameOverLayer.visible = false;
-                }
-            }
-        }, this);
     }
 });
 
