@@ -30,8 +30,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 372.965,
-              "Y": 354.614
+              "X": 320.5,
+              "Y": 351.1163
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -40,17 +40,17 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.5828,
-              "Y": 0.7388
+              "X": 0.5008,
+              "Y": 0.7315
             },
             "PreSize": {
               "X": 0.2516,
               "Y": 0.2083
             },
-            "LeftMargin": 292.465,
-            "RightMargin": 186.535,
-            "TopMargin": 75.386,
-            "BottomMargin": 304.614,
+            "LeftMargin": 240.0,
+            "RightMargin": 239.0,
+            "TopMargin": 78.8837,
+            "BottomMargin": 301.1163,
             "Tag": 16,
             "ActionTag": -2096155406,
             "Size": {
@@ -85,36 +85,36 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 372.4649,
-              "Y": 355.6136
+              "X": 319.9997,
+              "Y": 351.5417
             },
             "Scale": {
               "ScaleX": 1.5545,
               "ScaleY": 1.5545
             },
             "CColor": {
-              "R": 0,
-              "G": 0,
-              "B": 0
+              "R": 25,
+              "G": 23,
+              "B": 23
             },
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.582,
-              "Y": 0.7409
+              "X": 0.5,
+              "Y": 0.7324
             },
             "PreSize": {
               "X": 0.125,
-              "Y": 0.1042
+              "Y": 0.0875
             },
-            "LeftMargin": 332.4649,
-            "RightMargin": 227.5351,
-            "TopMargin": 99.3864,
-            "BottomMargin": 330.6136,
+            "LeftMargin": 279.9997,
+            "RightMargin": 280.0003,
+            "TopMargin": 107.4583,
+            "BottomMargin": 330.5417,
             "Tag": 15,
             "ActionTag": 1878756798,
             "Size": {
               "X": 80.0,
-              "Y": 50.0
+              "Y": 42.0
             },
             "Name": "scoreLb",
             "ctype": "TextObjectData"
@@ -167,45 +167,49 @@
             "ctype": "ImageViewObjectData"
           },
           {
-            "LabelText": "score",
+            "FileData": {
+              "Type": "Normal",
+              "Path": "texture/notify.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 75,
+            "Scale9OriginY": 32,
+            "Scale9Width": 78,
+            "Scale9Height": 33,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 265.2189,
-              "Y": 358.3031
+              "X": 193.4694,
+              "Y": 346.3149
             },
             "Scale": {
-              "ScaleX": 3.0595,
-              "ScaleY": 5.9035
+              "ScaleX": 0.6361,
+              "ScaleY": 0.6361
             },
-            "CColor": {
-              "R": 77,
-              "G": 77,
-              "B": 77
-            },
+            "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.4144,
-              "Y": 0.7465
+              "X": 0.3023,
+              "Y": 0.7215
             },
             "PreSize": {
-              "X": 0.0469,
-              "Y": 0.0312
+              "X": 0.3562,
+              "Y": 0.2021
             },
-            "LeftMargin": 250.2189,
-            "RightMargin": 359.7811,
-            "TopMargin": 114.1969,
-            "BottomMargin": 350.8031,
-            "Tag": 97,
-            "ActionTag": 2096464164,
+            "LeftMargin": 79.4694,
+            "RightMargin": 332.5306,
+            "TopMargin": 85.1851,
+            "BottomMargin": 297.8149,
+            "Tag": 257,
+            "ActionTag": 1090838708,
             "Size": {
-              "X": 30.0,
-              "Y": 15.0
+              "X": 228.0,
+              "Y": 97.0
             },
-            "Name": "BitmapFontLabel_1",
-            "ctype": "TextBMFontObjectData"
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
           }
         ],
         "Size": {
@@ -218,6 +222,7 @@
       "UsedResources": [
         "FontFelt.ttf",
         "texture/guide_text.png",
+        "texture/notify.png",
         "texture/scoreBg.png"
       ],
       "ctype": "GameFileData"
